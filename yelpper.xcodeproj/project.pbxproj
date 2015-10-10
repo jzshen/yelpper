@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		5C4692361BC91BE400835DF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4692351BC91BE400835DF9 /* AppDelegate.swift */; };
-		5C4692381BC91BE400835DF9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4692371BC91BE400835DF9 /* ViewController.swift */; };
 		5C46923B1BC91BE400835DF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4692391BC91BE400835DF9 /* Main.storyboard */; };
 		5C46923D1BC91BE400835DF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C46923C1BC91BE400835DF9 /* Assets.xcassets */; };
 		5C4692401BC91BE400835DF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C46923E1BC91BE400835DF9 /* LaunchScreen.storyboard */; };
+		8ED792A41BC9239E00E1F17D /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED792A31BC9239E00E1F17D /* loginViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8ED792A61BC9242000E1F17D /* optionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED792A51BC9242000E1F17D /* optionsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8ED792A91BC924C900E1F17D /* uber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED792A81BC924C900E1F17D /* uber.swift */; settings = {ASSET_TAGS = (); }; };
+		8ED792AB1BC924D800E1F17D /* yelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED792AA1BC924D800E1F17D /* yelp.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5C4692321BC91BE400835DF9 /* yelpper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yelpper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C4692351BC91BE400835DF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5C4692371BC91BE400835DF9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5C46923A1BC91BE400835DF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C46923C1BC91BE400835DF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C46923F1BC91BE400835DF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C4692411BC91BE400835DF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8ED792A31BC9239E00E1F17D /* loginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
+		8ED792A51BC9242000E1F17D /* optionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = optionsViewController.swift; sourceTree = "<group>"; };
+		8ED792A81BC924C900E1F17D /* uber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = uber.swift; sourceTree = "<group>"; };
+		8ED792AA1BC924D800E1F17D /* yelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yelp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +61,32 @@
 			isa = PBXGroup;
 			children = (
 				5C4692351BC91BE400835DF9 /* AppDelegate.swift */,
-				5C4692371BC91BE400835DF9 /* ViewController.swift */,
+				8ED792A71BC9246E00E1F17D /* Classes */,
+				8ED792A21BC9237F00E1F17D /* viewControllers */,
 				5C4692391BC91BE400835DF9 /* Main.storyboard */,
 				5C46923C1BC91BE400835DF9 /* Assets.xcassets */,
 				5C46923E1BC91BE400835DF9 /* LaunchScreen.storyboard */,
 				5C4692411BC91BE400835DF9 /* Info.plist */,
 			);
 			path = yelpper;
+			sourceTree = "<group>";
+		};
+		8ED792A21BC9237F00E1F17D /* viewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8ED792A31BC9239E00E1F17D /* loginViewController.swift */,
+				8ED792A51BC9242000E1F17D /* optionsViewController.swift */,
+			);
+			name = viewControllers;
+			sourceTree = "<group>";
+		};
+		8ED792A71BC9246E00E1F17D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8ED792A81BC924C900E1F17D /* uber.swift */,
+				8ED792AA1BC924D800E1F17D /* yelp.swift */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,8 +159,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C4692381BC91BE400835DF9 /* ViewController.swift in Sources */,
+				8ED792A41BC9239E00E1F17D /* loginViewController.swift in Sources */,
 				5C4692361BC91BE400835DF9 /* AppDelegate.swift in Sources */,
+				8ED792AB1BC924D800E1F17D /* yelp.swift in Sources */,
+				8ED792A61BC9242000E1F17D /* optionsViewController.swift in Sources */,
+				8ED792A91BC924C900E1F17D /* uber.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +311,7 @@
 				5C4692461BC91BE400835DF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
