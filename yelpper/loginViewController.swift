@@ -9,7 +9,17 @@
 import UIKit
 
 class loginViewController: UIViewController {
+    
 
+    @IBAction func loginButton(sender: AnyObject) {
+        
+        let uberSession: Uber = Uber.init(pickupLocation: <#T##CLLocationCoordinate2D#>)
+        
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
