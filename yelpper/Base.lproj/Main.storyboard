@@ -25,14 +25,15 @@
                                     <outlet property="delegate" destination="LnA-YI-Zje" id="VXv-cR-yqC"/>
                                 </connections>
                             </pickerView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IsG-j8-ZeT">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IsG-j8-ZeT">
                                 <rect key="frame" x="165" y="271" width="271" height="29"/>
                                 <animations/>
                                 <segments>
-                                    <segment title="$"/>
-                                    <segment title="$$"/>
-                                    <segment title="$$$"/>
-                                    <segment title="$$$$"/>
+                                    <segment title="⭐️"/>
+                                    <segment title="⭐️ ⭐️"/>
+                                    <segment title="⭐️ ⭐️ ⭐️"/>
+                                    <segment title="⭐️ ⭐️ ⭐️ ⭐️"/>
+                                    <segment title="⭐️ ⭐️ ⭐️ ⭐️ ⭐️"/>
                                 </segments>
                                 <connections>
                                     <action selector="priceChanged:" destination="LnA-YI-Zje" eventType="valueChanged" id="eWI-2w-8fb"/>

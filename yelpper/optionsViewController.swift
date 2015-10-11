@@ -9,6 +9,10 @@
 import UIKit
 import CoreLocation
 
+var locationLongtitude: CLLocationDegrees = 0
+var locationLatitude: CLLocationDegrees = 0
+var selectedDistance: Int = 1
+
 class optionsViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewDataSource,UIPickerViewDelegate {
     
     //List of Uber Products
@@ -18,14 +22,14 @@ class optionsViewController: UIViewController, CLLocationManagerDelegate, UIPick
     var locManager = CLLocationManager()
     
     //Distance Data
-    var distanceData:[[String]] = [["1 mi","5 mi","10 mi","15 mi" ,"20 mi","25 mi","30 mi","35 mi","50 mi"], []]
+    var distanceData:[[String]] = [["1 mi","5 mi","10 mi","15 mi" ,"20 mi","25 mi"], []]
     
-    var distanceTemp: [int] = [1,5,10,15 ,20,25,30,35,50]
+    var distanceTemp: [Int] = [1,5,10,15 ,20,25]
     
     //Selected Data
-    var selectedDistance: Int = 0
-    var selectedYelpPrice: Int = 0
-    var selectedUber: String = 0
+    
+    var selectedYelpRating: Int = 1
+    var selectedUber: String = ""
     
     
     
@@ -36,38 +40,47 @@ class optionsViewController: UIViewController, CLLocationManagerDelegate, UIPick
     @IBOutlet weak var yelpPrice: UISegmentedControl!
     
     
-    //Detect Yelp Price Change
+    //Detect Yelp Rating Change
     @IBAction func priceChanged(sender: UISegmentedControl) {
         switch yelpPrice.selectedSegmentIndex
         {
         case 0:
-            selectedYelpPrice = 1
+            selectedYelpRating = 1
         case 1:
-            selectedYelpPrice = 2
+            selectedYelpRating = 2
         case 2:
-            selectedYelpPrice = 3
+            selectedYelpRating = 3
         case 3:
-            selectedYelpPrice = 4
+            selectedYelpRating = 4
+        case 4:
+            selectedYelpRating = 5
         default:
-            selectedYelpPrice = 1
+            selectedYelpRating = 1
         }
     }
+    
+    
+    
+    var businesses: [Business]!
     
     @IBAction func findUber(sender: AnyObject) {
         
         
         
-        print(selectedDistance, selectedYelpPrice, selectedUber)
+        print(selectedDistance, selectedYelpRating, selectedUber)
         
         
+        Business.searchWithTerm("Restaurants", sort: .HighestRated, categories: nil, deals: false) { (businesses: [Business]!, error: NSError!) -> Void in
+            self.businesses = businesses
+            
+            for business in businesses {
+                print(business.name!)
+                print(business.address!)
+            }
+        }
+
         
-        
-        
-        
-        
-        
-        
-        
+
         
         
     }
@@ -121,7 +134,9 @@ class optionsViewController: UIViewController, CLLocationManagerDelegate, UIPick
         case 0:
             selectedDistance = distanceTemp[row]
         case 1:
-            selectedUber = selectedDistance[1][row]
+            selectedUber = distanceData[1][row]
+        default:
+            print("what the efffffff")
         }
 
     }
@@ -143,6 +158,10 @@ class optionsViewController: UIViewController, CLLocationManagerDelegate, UIPick
                 
                 let latitude = Float(locManager.location!.coordinate.latitude)
                 let longitude = Float(locManager.location!.coordinate.longitude)
+                
+                //set Global loattitude and longtitude 
+                locationLatitude = locManager.location!.coordinate.latitude
+                locationLongtitude = locManager.location!.coordinate.longitude
 
                 UBUberAPI.shared().getProductsFromLatitude(latitude , longitude: longitude, response: {(products: [AnyObject]!, error: NSError!) in
                     
@@ -150,7 +169,7 @@ class optionsViewController: UIViewController, CLLocationManagerDelegate, UIPick
                         print(products[i].displayName)
                         self.distanceData[1].append(products[i].displayName)
                     }
-                    
+                    self.selectedUber = self.distanceData[1][0]
                     self.distancePicker.dataSource = self
                     self.distancePicker.delegate = self
                     

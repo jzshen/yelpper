@@ -1,31 +1,31 @@
 //
-//  yelp.swift
-//  yelpper
+//  YelpClient.swift
+//  Yelp
 //
-//  Created by Unis Barakat on 10/10/15.
-//  Copyright © 2015 Jennifer Shen. All rights reserved.
+//  Created by Timothy Lee on 9/19/14.
+//  Copyright (c) 2014 Timothy Lee. All rights reserved.
 //
 
 import UIKit
 
 // You can register for Yelp API keys here: http://www.yelp.com/developers/manage_api_keys
-let yelpConsumerKey = "1NXyCt1DTeZ2HeQZCE8rBw"
-let yelpConsumerSecret = "aaYdIN7aIJgZg3H1Qa80U8pFVMw"
-let yelpToken = "j8uV3nYjguu7Ti1_A8CvIO0HJP46_RTG"
-let yelpTokenSecret = "jkMcD8g2zGIIlwK1uT_osiAFTJY"
+let yelpConsumerKey = "vxKwwcR_NMQ7WaEiQBK_CA"
+let yelpConsumerSecret = "33QCvh5bIF5jIHR5klQr7RtBDhQ"
+let yelpToken = "uRcRswHFYa1VkDrGV6LAW2F8clGh5JHV"
+let yelpTokenSecret = "mqtKIxMIR4iBtBPZCmCLEb-Dz3Y"
 
 enum YelpSortMode: Int {
     case BestMatched = 0, Distance, HighestRated
 }
 
-class Yelp: BDBOAuth1RequestOperationManager {
+class YelpClient: BDBOAuth1RequestOperationManager {
     var accessToken: String!
     var accessSecret: String!
     
-    class var sharedInstance : Yelp {
+    class var sharedInstance : YelpClient {
         struct Static {
             static var token : dispatch_once_t = 0
-            static var instance : Yelp? = nil
+            static var instance : YelpClient? = nil
         }
         
         dispatch_once(&Static.token) {
@@ -55,8 +55,13 @@ class Yelp: BDBOAuth1RequestOperationManager {
     func searchWithTerm(term: String, sort: YelpSortMode?, categories: [String]?, deals: Bool?, completion: ([Business]!, NSError!) -> Void) -> AFHTTPRequestOperation {
         // For additional parameters, see http://www.yelp.com/developers/documentation/v2/search_api
         
-        // Default the location to San Francisco
-        var parameters: [String : AnyObject] = ["term": term, "ll": "37.785771,-122.406165"]
+        // Default the location to global location variable 
+        let locationString: String = String(locationLatitude) + "," + String(locationLongtitude)
+        
+        let limit = 25
+        
+        
+        var parameters: [String : AnyObject] = ["term": term, "limit": limit, "ll": locationString, "radius_filter": selectedDistance * 1600]
         
         if sort != nil {
             parameters["sort"] = sort!.rawValue
@@ -82,4 +87,3 @@ class Yelp: BDBOAuth1RequestOperationManager {
         })
     }
 }
-

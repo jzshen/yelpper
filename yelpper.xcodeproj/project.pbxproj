@@ -15,7 +15,7 @@
 		8EB383591BCA75F30055FEAB /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB383581BCA75F30055FEAB /* Business.swift */; settings = {ASSET_TAGS = (); }; };
 		8ED792A61BC9242000E1F17D /* optionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED792A51BC9242000E1F17D /* optionsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8ED792A91BC924C900E1F17D /* uber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED792A81BC924C900E1F17D /* uber.swift */; settings = {ASSET_TAGS = (); }; };
-		8ED792AB1BC924D800E1F17D /* yelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED792AA1BC924D800E1F17D /* yelp.swift */; settings = {ASSET_TAGS = (); }; };
+		8ED792AB1BC924D800E1F17D /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED792AA1BC924D800E1F17D /* YelpClient.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		8EB383581BCA75F30055FEAB /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		8ED792A51BC9242000E1F17D /* optionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = optionsViewController.swift; sourceTree = "<group>"; };
 		8ED792A81BC924C900E1F17D /* uber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = uber.swift; sourceTree = "<group>"; };
-		8ED792AA1BC924D800E1F17D /* yelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yelp.swift; sourceTree = "<group>"; };
+		8ED792AA1BC924D800E1F17D /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
 		CF70FECB92522FD79DCBBC94 /* libPods-yelpper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-yelpper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -101,7 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				8ED792A81BC924C900E1F17D /* uber.swift */,
-				8ED792AA1BC924D800E1F17D /* yelp.swift */,
+				8ED792AA1BC924D800E1F17D /* YelpClient.swift */,
 				8EB383581BCA75F30055FEAB /* Business.swift */,
 			);
 			name = Classes;
@@ -222,7 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C4692361BC91BE400835DF9 /* AppDelegate.swift in Sources */,
-				8ED792AB1BC924D800E1F17D /* yelp.swift in Sources */,
+				8ED792AB1BC924D800E1F17D /* YelpClient.swift in Sources */,
 				8EB383591BCA75F30055FEAB /* Business.swift in Sources */,
 				8ED792A61BC9242000E1F17D /* optionsViewController.swift in Sources */,
 				8ED792A91BC924C900E1F17D /* uber.swift in Sources */,
