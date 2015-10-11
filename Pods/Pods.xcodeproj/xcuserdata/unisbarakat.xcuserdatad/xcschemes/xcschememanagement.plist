@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>AFNetworking+ImageActivityIndicator.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>BDBOAuth1Manager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-yelpper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Uber-iOS-SDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>1D21D987DFFC90864FB4A5AE32EBC390</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4B4651C5A09FE348FB4933538FDAFC8E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>53E3B14895957529348B2C488DADA0D6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>57D4969245411DBA7A5AA735D7C8352A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE970E3C22ED009252BF9EE1102464CB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
