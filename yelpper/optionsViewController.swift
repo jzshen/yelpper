@@ -83,24 +83,27 @@ class optionsViewController: UIViewController, CLLocationManagerDelegate, UIPick
             self.destAddress =  self.businesses[self.randRange(0, upper: self.businesses.count - 1)].address!
             
             print(self.destAddress)
+            
+            //Navigate to address picked with Uber
+            
+            let uberSession: uber = uber(pickupLocation: (self.locManager.location?.coordinate)!)
+            
+            uberSession.dropoffNickname = self.businesses[self.randRange(0, upper: self.businesses.count - 1)].name
+            uberSession.dropoffFormattedAddress = self.destAddress
+            
+            uberSession.deepLink()
         }
         
         
-        //Navigate to address picked with Uber
         
-//        let uberSession: uber = uber(pickupLocation: (locManager.location?.coordinate)!)
-//        
-//        uberSession.dropoffFormattedAddress = destAddress
-//        
-//        uberSession.deepLink()
         
         
         //get estimate
         
-        let estemiate: UBPriceEstimate = UBPriceEstimate.init(dictionary: ["product_id" : selectedProductID , "distance" : selectedDistance ])
-        print("getting estimate ...")
-        print(estemiate.lowEstimate)
-        print("finished estimating..")
+//        let estemiate: UBPriceEstimate = UBPriceEstimate.init(dictionary: ["product_id" : selectedProductID , "distance" : selectedDistance ])
+//        print("getting estimate ...")
+//        print(estemiate.lowEstimate)
+//        print("finished estimating..")
         
     }
     

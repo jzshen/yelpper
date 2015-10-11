@@ -40,7 +40,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJa-uX-v3y">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Find"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Uber to Restaurant"/>
                                 <connections>
                                     <action selector="findUber:" destination="LnA-YI-Zje" eventType="touchUpInside" id="ub1-et-G7N"/>
                                 </connections>
@@ -50,9 +51,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="IsG-j8-ZeT" firstAttribute="centerX" secondItem="Mcc-El-61j" secondAttribute="centerX" id="3Aq-oU-a0v"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IsG-j8-ZeT" secondAttribute="trailing" constant="20" id="3d9-OU-IvN"/>
                             <constraint firstItem="fvd-8u-Oi8" firstAttribute="top" secondItem="sxi-IS-dyH" secondAttribute="bottom" constant="75" id="8s8-vH-sK9">
                                 <variation key="heightClass=regular-widthClass=compact" constant="8"/>
                             </constraint>
+                            <constraint firstItem="IsG-j8-ZeT" firstAttribute="leading" secondItem="Mcc-El-61j" secondAttribute="leadingMargin" constant="20" id="DQI-Pc-0So"/>
                             <constraint firstItem="fvd-8u-Oi8" firstAttribute="centerX" secondItem="Mcc-El-61j" secondAttribute="centerX" id="Fsq-vQ-YcQ"/>
                             <constraint firstItem="fvd-8u-Oi8" firstAttribute="leading" secondItem="Mcc-El-61j" secondAttribute="leadingMargin" constant="20" id="MqU-pg-fUK"/>
                             <constraint firstItem="IsG-j8-ZeT" firstAttribute="centerY" secondItem="Mcc-El-61j" secondAttribute="centerY" id="RO7-uY-MYu">
@@ -72,15 +75,17 @@
                                 <exclude reference="qJa-uX-v3y"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="S4H-ZC-qNt"/>
-                                <exclude reference="WGq-P9-ADD"/>
                                 <exclude reference="8s8-vH-sK9"/>
                                 <exclude reference="Fsq-vQ-YcQ"/>
                                 <exclude reference="MqU-pg-fUK"/>
                                 <exclude reference="UiO-5f-nSG"/>
                                 <exclude reference="3Aq-oU-a0v"/>
+                                <exclude reference="3d9-OU-IvN"/>
+                                <exclude reference="DQI-Pc-0So"/>
                                 <exclude reference="RO7-uY-MYu"/>
                                 <exclude reference="t1L-0Z-i7Y"/>
+                                <exclude reference="S4H-ZC-qNt"/>
+                                <exclude reference="WGq-P9-ADD"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -88,15 +93,17 @@
                                 <include reference="qJa-uX-v3y"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="S4H-ZC-qNt"/>
-                                <include reference="WGq-P9-ADD"/>
                                 <include reference="8s8-vH-sK9"/>
                                 <include reference="Fsq-vQ-YcQ"/>
                                 <include reference="MqU-pg-fUK"/>
                                 <include reference="UiO-5f-nSG"/>
                                 <include reference="3Aq-oU-a0v"/>
+                                <include reference="3d9-OU-IvN"/>
+                                <include reference="DQI-Pc-0So"/>
                                 <include reference="RO7-uY-MYu"/>
                                 <include reference="t1L-0Z-i7Y"/>
+                                <include reference="S4H-ZC-qNt"/>
+                                <include reference="WGq-P9-ADD"/>
                             </mask>
                         </variation>
                     </view>
