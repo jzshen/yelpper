@@ -42,6 +42,9 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Find"/>
+                                <connections>
+                                    <action selector="findUber:" destination="LnA-YI-Zje" eventType="touchUpInside" id="ub1-et-G7N"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
