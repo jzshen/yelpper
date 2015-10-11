@@ -9,10 +9,10 @@
 import UIKit
 
 // You can register for Yelp API keys here: http://www.yelp.com/developers/manage_api_keys
-let yelpConsumerKey = "vxKwwcR_NMQ7WaEiQBK_CA"
-let yelpConsumerSecret = "33QCvh5bIF5jIHR5klQr7RtBDhQ"
-let yelpToken = "uRcRswHFYa1VkDrGV6LAW2F8clGh5JHV"
-let yelpTokenSecret = "mqtKIxMIR4iBtBPZCmCLEb-Dz3Y"
+let yelpConsumerKey = "1NXyCt1DTeZ2HeQZCE8rBw"
+let yelpConsumerSecret = "aaYdIN7aIJgZg3H1Qa80U8pFVMw"
+let yelpToken = "j8uV3nYjguu7Ti1_A8CvIO0HJP46_RTG"
+let yelpTokenSecret = "jkMcD8g2zGIIlwK1uT_osiAFTJY"
 
 enum YelpSortMode: Int {
     case BestMatched = 0, Distance, HighestRated
@@ -58,10 +58,9 @@ class YelpClient: BDBOAuth1RequestOperationManager {
         // Default the location to global location variable 
         let locationString: String = String(locationLatitude) + "," + String(locationLongtitude)
         
-        let limit = 25
         
         
-        var parameters: [String : AnyObject] = ["term": term, "limit": limit, "ll": locationString, "radius_filter": selectedDistance * 1600]
+        var parameters: [String : AnyObject] = ["term": term, "ll": locationString, "radius_filter": selectedDistance * 1600]
         
         if sort != nil {
             parameters["sort"] = sort!.rawValue

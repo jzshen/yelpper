@@ -29,11 +29,9 @@
                                 <rect key="frame" x="165" y="271" width="271" height="29"/>
                                 <animations/>
                                 <segments>
-                                    <segment title="⭐️"/>
-                                    <segment title="⭐️ ⭐️"/>
-                                    <segment title="⭐️ ⭐️ ⭐️"/>
-                                    <segment title="⭐️ ⭐️ ⭐️ ⭐️"/>
-                                    <segment title="⭐️ ⭐️ ⭐️ ⭐️ ⭐️"/>
+                                    <segment title="Distance"/>
+                                    <segment title="Best of Both"/>
+                                    <segment title="Rating"/>
                                 </segments>
                                 <connections>
                                     <action selector="priceChanged:" destination="LnA-YI-Zje" eventType="valueChanged" id="eWI-2w-8fb"/>

@@ -12,6 +12,9 @@ import CoreLocation
 var locationLongtitude: CLLocationDegrees = 0
 var locationLatitude: CLLocationDegrees = 0
 var selectedDistance: Int = 1
+var productIDs: [String] = []
+var selectedProductID: String = ""
+
 
 class optionsViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewDataSource,UIPickerViewDelegate {
     
@@ -28,7 +31,7 @@ class optionsViewController: UIViewController, CLLocationManagerDelegate, UIPick
     
     //Selected Data
     
-    var selectedYelpRating: Int = 1
+    var sorting: Int = 1
     var selectedUber: String = ""
     
     
@@ -45,43 +48,59 @@ class optionsViewController: UIViewController, CLLocationManagerDelegate, UIPick
         switch yelpPrice.selectedSegmentIndex
         {
         case 0:
-            selectedYelpRating = 1
+            sorting = 1
         case 1:
-            selectedYelpRating = 2
+            sorting = 2
         case 2:
-            selectedYelpRating = 3
-        case 3:
-            selectedYelpRating = 4
-        case 4:
-            selectedYelpRating = 5
+            sorting = 3
         default:
-            selectedYelpRating = 1
+            sorting = 1
         }
     }
     
     
     
     var businesses: [Business]!
+    var destAddress: String = ""
     
     @IBAction func findUber(sender: AnyObject) {
         
+        //Find Sorting Method Based on Input
+        var sortingMethod: YelpSortMode = .Distance
         
+        if(sorting == 1){
+            sortingMethod = .Distance
+        } else if (sorting == 2){
+            sortingMethod = .BestMatched
+        } else {
+            sortingMethod = .HighestRated
+        }
         
-        print(selectedDistance, selectedYelpRating, selectedUber)
-        
-        
-        Business.searchWithTerm("Restaurants", sort: .HighestRated, categories: nil, deals: false) { (businesses: [Business]!, error: NSError!) -> Void in
+        //Using Yelp, find a list of roughly 20-40 restuarants and put thim in an array
+        Business.searchWithTerm("Restaurants", sort: sortingMethod, categories: nil, deals: false) { (businesses: [Business]!, error: NSError!) -> Void in
             self.businesses = businesses
             
-            for business in businesses {
-                print(business.name!)
-                print(business.address!)
-            }
+            self.destAddress =  self.businesses[self.randRange(0, upper: self.businesses.count - 1)].address!
+            
+            print(self.destAddress)
         }
-
         
-
         
+        //Navigate to address picked with Uber
+        
+//        let uberSession: uber = uber(pickupLocation: (locManager.location?.coordinate)!)
+//        
+//        uberSession.dropoffFormattedAddress = destAddress
+//        
+//        uberSession.deepLink()
+        
+        
+        //get estimate
+        
+        let estemiate: UBPriceEstimate = UBPriceEstimate.init(dictionary: ["product_id" : selectedProductID , "distance" : selectedDistance ])
+        print("getting estimate ...")
+        print(estemiate.lowEstimate)
+        print("finished estimating..")
         
     }
     
@@ -135,6 +154,7 @@ class optionsViewController: UIViewController, CLLocationManagerDelegate, UIPick
             selectedDistance = distanceTemp[row]
         case 1:
             selectedUber = distanceData[1][row]
+            selectedProductID = productIDs[row]
         default:
             print("what the efffffff")
         }
@@ -168,14 +188,20 @@ class optionsViewController: UIViewController, CLLocationManagerDelegate, UIPick
                     for (var i = 0; i < products.count; i++){
                         print(products[i].displayName)
                         self.distanceData[1].append(products[i].displayName)
+                        productIDs.append(products[i].productId)
                     }
-                    self.selectedUber = self.distanceData[1][0]
+                    self.selectedUber = self.distanceData[1][0] //set a default
                     self.distancePicker.dataSource = self
                     self.distancePicker.delegate = self
                     
                 })
             }
             
+    }
+    
+    //Random Int function
+    func randRange (lower: Int , upper: Int) -> Int {
+        return lower + Int(arc4random_uniform(UInt32(upper - lower + 1)))
     }
     
     
