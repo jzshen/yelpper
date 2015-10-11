@@ -7,16 +7,23 @@
 //
 
 import UIKit
+import CoreLocation
 
-class loginViewController: UIViewController {
+class loginViewController: UIViewController, CLLocationManagerDelegate {
+    
+    
+    let locationManager = CLLocationManager()
     
 
     @IBAction func loginButton(sender: AnyObject) {
         
-        let uberSession: Uber = Uber.init(pickupLocation: <#T##CLLocationCoordinate2D#>)
+        let pickupLocation = locationManager.location?.coordinate
+
+        let uberSession = uber(pickupLocation: pickupLocation!)
+        
+        uberSession.deepLink()
         
     }
-    
     
     
     
@@ -24,6 +31,15 @@ class loginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        // 1
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

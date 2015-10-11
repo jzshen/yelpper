@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59DA15B529F6D0A64EA820D6 /* libPods-yelpper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF70FECB92522FD79DCBBC94 /* libPods-yelpper.a */; };
 		5C4692361BC91BE400835DF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4692351BC91BE400835DF9 /* AppDelegate.swift */; };
 		5C46923B1BC91BE400835DF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4692391BC91BE400835DF9 /* Main.storyboard */; };
 		5C46923D1BC91BE400835DF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C46923C1BC91BE400835DF9 /* Assets.xcassets */; };
@@ -18,16 +19,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		25D283DE4BFD67545B09EF23 /* Pods-yelpper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yelpper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-yelpper/Pods-yelpper.debug.xcconfig"; sourceTree = "<group>"; };
+		311DB2257497C3DE6D1805D5 /* Pods-yelpper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yelpper.release.xcconfig"; path = "Pods/Target Support Files/Pods-yelpper/Pods-yelpper.release.xcconfig"; sourceTree = "<group>"; };
 		5C4692321BC91BE400835DF9 /* yelpper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yelpper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C4692351BC91BE400835DF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C46923A1BC91BE400835DF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C46923C1BC91BE400835DF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C46923F1BC91BE400835DF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C4692411BC91BE400835DF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E18D3501BC9D6EC00F48D73 /* yelpper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "yelpper-Bridging-Header.h"; sourceTree = "<group>"; };
 		8ED792A31BC9239E00E1F17D /* loginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		8ED792A51BC9242000E1F17D /* optionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = optionsViewController.swift; sourceTree = "<group>"; };
 		8ED792A81BC924C900E1F17D /* uber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = uber.swift; sourceTree = "<group>"; };
 		8ED792AA1BC924D800E1F17D /* yelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yelp.swift; sourceTree = "<group>"; };
+		CF70FECB92522FD79DCBBC94 /* libPods-yelpper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-yelpper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +40,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59DA15B529F6D0A64EA820D6 /* libPods-yelpper.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		119D305BC3BB334D31EC9954 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				25D283DE4BFD67545B09EF23 /* Pods-yelpper.debug.xcconfig */,
+				311DB2257497C3DE6D1805D5 /* Pods-yelpper.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5C4692291BC91BE400835DF9 = {
 			isa = PBXGroup;
 			children = (
 				5C4692341BC91BE400835DF9 /* yelpper */,
 				5C4692331BC91BE400835DF9 /* Products */,
+				119D305BC3BB334D31EC9954 /* Pods */,
+				BAB2BE1D0DCA1D805E39B47B /* Frameworks */,
+				8E18D3501BC9D6EC00F48D73 /* yelpper-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +107,14 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
+		BAB2BE1D0DCA1D805E39B47B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF70FECB92522FD79DCBBC94 /* libPods-yelpper.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -96,9 +122,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C4692441BC91BE400835DF9 /* Build configuration list for PBXNativeTarget "yelpper" */;
 			buildPhases = (
+				3BBD17611C55B460A3B944F8 /* Check Pods Manifest.lock */,
 				5C46922E1BC91BE400835DF9 /* Sources */,
 				5C46922F1BC91BE400835DF9 /* Frameworks */,
 				5C4692301BC91BE400835DF9 /* Resources */,
+				0F4F3726BDC07D851F9C2377 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -115,6 +143,7 @@
 		5C46922A1BC91BE400835DF9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Jennifer Shen";
 				TargetAttributes = {
@@ -153,6 +182,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F4F3726BDC07D851F9C2377 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yelpper/Pods-yelpper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3BBD17611C55B460A3B944F8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5C46922E1BC91BE400835DF9 /* Sources */ = {
@@ -272,23 +334,30 @@
 		};
 		5C4692451BC91BE400835DF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25D283DE4BFD67545B09EF23 /* Pods-yelpper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = yelpper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Jennifer-Shen.yelpper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "yelpper-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		5C4692461BC91BE400835DF9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 311DB2257497C3DE6D1805D5 /* Pods-yelpper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = yelpper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Jennifer-Shen.yelpper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "yelpper-Bridging-Header.h";
 			};
 			name = Release;
 		};
